@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const model = require('./models/articles');
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -19,6 +20,6 @@ mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/nyt'
 )
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("Listening on port 3000");
 }) 
