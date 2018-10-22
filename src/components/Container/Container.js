@@ -28,7 +28,7 @@ class Container extends React.Component {
     handleSave(id){
         alert(id);
         axios.post('/save', this.state.results[id]).then(res => {
-            console.log(res, "---- this is the article that we saved");
+            console.log(res, "---- this is the saved article");
         })
     }
 
