@@ -9,6 +9,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // mongoose.connect('mongodb://localhost:27017/nyt');
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
+
 app.post('/save', function(req, res) {
     let article = req.body;
     ///
